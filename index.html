@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b3162d">
+  <meta name="description" content="Федеральные и региональные тренеры ИНГАЛ по косметологии и гинекологии.">
+  <title>Тренеры ИНГАЛ</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Тренеры ИНГАЛ">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=14">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="ИНГАЛ — на главную">
+      <img src="assets/ingal-logo.svg" alt="ИНГАЛ">
+      <span><b>АКАДЕМИЯ ИНГАЛ</b><small>Федеральные и региональные тренеры</small></span>
+    </a>
+    <nav class="header-actions" aria-label="Навигация">
+      <a href="#federal">Федеральные</a>
+      <a href="#regions">По регионам</a>
+      <button id="installButton" class="install-button">Установить приложение</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">ЭКСПЕРТНАЯ КОМАНДА</p>
+        <h1>Тренеры ИНГАЛ<br><span>по всей России</span></h1>
+        <p class="hero-text">Найдите федерального эксперта или тренера в своём регионе для профессионального обучения и развития практических навыков.</p>
+        <div class="direction-tabs" role="tablist" aria-label="Направление">
+          <button class="direction-tab is-active" role="tab" aria-selected="true" data-section="cosmetology">Косметология</button>
+          <button class="direction-tab" role="tab" aria-selected="false" data-section="gynecology">Гинекология</button>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Статистика каталога">
+        <div class="hero-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p>ПРОФЕССИОНАЛЬНОЕ<br>ОБУЧЕНИЕ</p>
+        <div class="hero-metrics">
+          <div><strong id="totalTrainers">0</strong><span>тренеров</span></div>
+          <div><strong id="totalCities">0</strong><span>городов</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="federal" class="section federal-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">ЭКСПЕРТЫ ФЕДЕРАЛЬНОГО УРОВНЯ</p><h2>Федеральные тренеры</h2></div>
+        <p>Ведущие специалисты, научные руководители и признанные эксперты направления.</p>
+      </div>
+      <div id="federalGrid" class="trainer-grid"></div>
+    </section>
+
+    <section id="regions" class="section regional-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">ВЫБЕРИТЕ РЕГИОН ИЛИ ГОРОД</p><h2>Тренеры в регионах</h2></div>
+        <p>Выберите федеральный округ, нажмите на область карты или укажите город.</p>
+      </div>
+
+      <div class="regional-layout">
+        <div class="map-card">
+          <div class="map-direction-switch" role="tablist" aria-label="Направление карты">
+            <span>Сейчас показано:</span>
+            <button class="map-direction-button is-active" type="button" role="tab" aria-selected="true" data-section="cosmetology">Косметология</button>
+            <button class="map-direction-button" type="button" role="tab" aria-selected="false" data-section="gynecology">Гинекология</button>
+          </div>
+          <div class="map-toolbar">
+            <label class="search-field"><span>Поиск</span><input id="searchInput" type="search" placeholder="Фамилия, город или специализация"></label>
+            <label class="select-field"><span>Регион тренера</span><select id="districtFilter"><option value="">Все регионы</option></select></label>
+          </div>
+          <div id="regionChips" class="region-chips" aria-label="Фильтр по регионам"></div>
+          <div id="map" class="map" aria-label="Интерактивная карта России"></div>
+          <div class="map-legend" aria-label="Обозначения карты">
+            <span><i class="legend-region"></i>Регион с тренерами</span>
+            <span><i class="legend-point"></i>Город</span>
+            <small>Карта показана единым силуэтом; регион выделяется при наведении</small>
+          </div>
+          <div id="mapFallback" class="map-fallback" hidden>
+            <p>Выберите город</p><div id="fallbackCities" class="city-chips"></div>
+          </div>
+          <div id="cityChips" class="city-chips" aria-label="Города"></div>
+        </div>
+
+        <aside class="region-panel">
+          <div class="region-panel-head">
+            <p class="eyebrow">ВЫБРАННЫЙ ОКРУГ</p>
+            <h3 id="regionTitle">Все города</h3>
+            <button id="clearCity" class="text-button" hidden>Сбросить</button>
+          </div>
+          <div id="managerCard" class="manager-card" hidden></div>
+          <p id="regionalCount" class="result-count"></p>
+          <div id="regionalGrid" class="regional-list"></div>
+          <div id="emptyState" class="empty-state" hidden>По выбранным условиям тренеры не найдены.</div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer><img src="assets/ingal-logo.svg" alt="ИНГАЛ"><p>Профессиональное сообщество специалистов эстетической медицины</p></footer>
+
+  <dialog id="trainerDialog" class="trainer-dialog">
+    <button id="dialogClose" class="dialog-close" aria-label="Закрыть">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <dialog id="installDialog" class="install-dialog">
+    <button id="installDialogClose" class="dialog-close" aria-label="Закрыть">×</button>
+    <div class="install-dialog-content">
+      <img src="assets/ingal-logo.svg" alt="ИНГАЛ">
+      <p class="eyebrow">ПРИЛОЖЕНИЕ ИНГАЛ</p>
+      <h2>Установите каталог тренеров</h2>
+      <div id="installInstructions"></div>
+      <button id="installDialogOk" class="install-dialog-ok" type="button">Понятно</button>
+    </div>
+  </dialog>
+
+  <template id="trainerCardTemplate">
+    <article class="trainer-card">
+      <div class="trainer-photo"><img alt=""><span></span></div>
+      <div class="trainer-card-body">
+        <div class="trainer-tags"><span class="level-tag"></span><span class="city-tag"></span></div>
+        <h3></h3><p class="trainer-role"></p><p class="trainer-summary"></p>
+        <button class="card-button">Подробнее <span>→</span></button>
+      </div>
+    </article>
+  </template>
+
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/russiaLow.js"></script>
+  <script src="data/trainers.js?v=14"></script>
+  <script src="app.js?v=14"></script>
+</body>
+</html>
