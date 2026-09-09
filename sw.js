@@ -1,4 +1,4 @@
-const CACHE = "ingal-trainers-v20";
+const CACHE = "ingal-trainers-v21";
 const LOCAL = ["./", "index.html", "styles.css", "app.js", "manifest.webmanifest", "data/trainers.js", "assets/ingal-logo.svg", "assets/fonts/Gilroy-Regular.ttf", "icons/icon-192.png", "icons/icon-512.png"];
 self.addEventListener("install", (event) => event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(LOCAL))));
 self.addEventListener("install", () => self.skipWaiting());
