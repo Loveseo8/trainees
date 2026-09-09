@@ -25,10 +25,12 @@
   const initials = (name) => clean(name).split(/\s+/).slice(0, 2).map((part) => part[0] || "").join("");
   const data = () => catalog[section] || { trainers: [], managers: [] };
   const managerIdsFor = (trainer) => trainer.managerIds?.length ? trainer.managerIds : (trainer.managerId ? [trainer.managerId] : []);
-  const managersFor = (trainer) => managerIdsFor(trainer).map((id) => data().managers.find((item) => item.id === id)).filter(Boolean);
+  const managersFor = (trainer) => {
+    const linked = managerIdsFor(trainer).map((id) => data().managers.find((item) => item.id === id)).filter(Boolean);
+    return linked.length ? linked : data().managers.filter((manager) => manager.region === trainerRegion(trainer));
+  };
   const federalDistrictRegions = {
-    "ЦФО": ["RU-BEL","RU-BRY","RU-VLA","RU-IVA","RU-KLU","RU-KOS","RU-LIP","RU-ORL","RU-RYA","RU-SMO","RU-TAM","RU-TVE","RU-TUL","RU-YAR"],
-    "МОСКВА И МО": ["RU-MOW","RU-MOS"],
+    "ЦФО / МОСКВА И МО": ["RU-BEL","RU-BRY","RU-VLA","RU-IVA","RU-KLU","RU-KOS","RU-LIP","RU-ORL","RU-RYA","RU-SMO","RU-TAM","RU-TVE","RU-TUL","RU-YAR","RU-MOW","RU-MOS"],
     "СЗФО": ["RU-KR","RU-KO","RU-ARK","RU-VLG","RU-KGD","RU-LEN","RU-MUR","RU-NEN","RU-NGR","RU-PSK","RU-SPE"],
     "СФО": ["RU-ALT","RU-AL","RU-IRK","RU-KEM","RU-KYA","RU-NVS","RU-TY","RU-ZAB"],
     "УРФО": ["RU-PER","RU-SVE","RU-CHE","RU-KIR","RU-UD"],
@@ -42,12 +44,11 @@
     Object.entries(federalDistrictRegions).flatMap(([district, ids]) => ids.map((id) => [id, district])),
   );
   const districtColors = {
-    "ЦФО": { active: 0xf1c5cd, inactive: 0xe4dfdc },
+    "ЦФО / МОСКВА И МО": { active: 0xf1c5cd, inactive: 0xe4dfdc },
     "СЗФО": { active: 0xf5d1d7, inactive: 0xeee9e6 },
     "ЮФО": { active: 0xedbbc4, inactive: 0xddd8d5 },
     "СКФО": { active: 0xf7d9de, inactive: 0xebe6e3 },
     "ПФО": { active: 0xf0c2ca, inactive: 0xe2ddda },
-    "МОСКВА И МО": { active: 0xf4ccd3, inactive: 0xe9e4e1 },
     "УРФО": { active: 0xf4ccd3, inactive: 0xe9e4e1 },
     "СФО": { active: 0xeebdc6, inactive: 0xded9d6 },
     "ДВО": { active: 0xf6d4da, inactive: 0xe7e2df },
@@ -69,10 +70,18 @@
     const img = container.querySelector(imageSelector);
     const fallback = container.querySelector("span");
     if (fallback) fallback.textContent = initials(trainer.name);
-    if (!trainer.photo) { if (img) img.classList.add("is-broken"); return; }
-    img.src = trainer.photo;
+    if (!img) return;
+    const localBase = `assets/trainers/${encodeURIComponent(trainer.name)}`;
+    const sources = [...new Set([`${localBase}.jpg`, `${localBase}.jpeg`, `${localBase}.png`, `${localBase}.webp`, trainer.photo].filter(Boolean))];
+    if (!sources.length) { img.classList.add("is-broken"); return; }
+    let sourceIndex = 0;
     img.alt = trainer.name;
-    img.addEventListener("error", () => img.classList.add("is-broken"), { once: true });
+    img.addEventListener("error", () => {
+      sourceIndex += 1;
+      if (sourceIndex < sources.length) img.src = sources[sourceIndex];
+      else img.classList.add("is-broken");
+    });
+    img.src = sources[sourceIndex];
   }
 
   function shortSummary(trainer) {
@@ -120,7 +129,7 @@
   function filteredRegional() {
     const query = normalize(el.search.value);
     const district = el.district.value;
-    return data().trainers.filter((trainer) => trainer.level === "Региональный")
+    return data().trainers
       .filter((trainer) => !selectedCity || trainer.city === selectedCity)
       .filter((trainer) => !district || trainerRegion(trainer) === district)
       .filter((trainer) => !query || normalize([trainer.name, trainer.city, trainer.specialty, trainer.credentials].join(" ")).includes(query));
@@ -136,6 +145,9 @@
     let managers = managerIds.map((id) => data().managers.find((item) => item.id === id)).filter(Boolean);
     if (el.district.value) {
       managers = data().managers.filter((manager) => manager.region === el.district.value);
+    } else if (selectedCity) {
+      const regions = new Set(items.map(trainerRegion));
+      managers = data().managers.filter((manager) => regions.has(manager.region));
     }
     if (!managers.length) { el.manager.hidden = true; return; }
     el.manager.innerHTML = `<small>${managers.length === 1 ? "Региональный менеджер" : "Региональные менеджеры"}</small>${managers.map((manager) => `<div class="manager-entry"><strong>${manager.name}</strong>${manager.territory ? `<p>${manager.territory}</p>` : ""}</div>`).join("")}`;
@@ -149,14 +161,14 @@
       const row = document.createElement("article");
       row.className = "regional-row";
       row.tabIndex = 0;
-      row.innerHTML = `<div class="regional-avatar"><img alt=""><span>${initials(trainer.name)}</span></div><div><h4>${trainer.name}</h4><p>${trainer.city} · ${trainer.specialty || "Тренер ИНГАЛ"}</p></div><b>→</b>`;
+      row.innerHTML = `<div class="regional-avatar"><img alt=""><span>${initials(trainer.name)}</span></div><div><h4>${trainer.name}</h4><p><span class="list-level ${trainer.level === "Федеральный" ? "is-federal" : ""}">${trainer.level}</span>${trainer.city} · ${trainer.specialty || "Тренер ИНГАЛ"}</p></div><b>→</b>`;
       setPhoto(row.querySelector(".regional-avatar"), trainer);
       row.addEventListener("click", () => openTrainer(trainer));
       row.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") openTrainer(trainer); });
       el.regional.append(row);
     });
     const selectedDistrict = el.district.value;
-    const districtExists = !selectedDistrict || data().trainers.some((trainer) => trainer.level === "Региональный" && trainerRegion(trainer) === selectedDistrict) || data().managers.some((manager) => manager.region === selectedDistrict);
+    const districtExists = !selectedDistrict || data().trainers.some((trainer) => trainerRegion(trainer) === selectedDistrict) || data().managers.some((manager) => manager.region === selectedDistrict);
     el.regionalCount.textContent = districtExists ? `${items.length} ${items.length === 1 ? "тренер" : items.length < 5 ? "тренера" : "тренеров"}` : "";
     el.empty.hidden = items.length > 0 || !districtExists;
     el.regionTitle.textContent = selectedCity || (el.district.value ? el.district.options[el.district.selectedIndex].text : "Все города");
@@ -165,7 +177,7 @@
   }
 
   function regionalCities() {
-    return [...new Set(data().trainers.filter((item) => item.level === "Региональный").map((item) => item.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, "ru"));
+    return [...new Set(data().trainers.map((item) => item.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, "ru"));
   }
 
   function selectCity(city) {
@@ -186,7 +198,7 @@
   }
 
   function renderFilters() {
-    const districts = [...new Set([...data().managers.map((manager) => manager.region), ...data().trainers.filter((trainer) => trainer.level === "Региональный").map(trainerRegion)].filter(Boolean))];
+    const districts = [...new Set([...data().managers.map((manager) => manager.region), ...data().trainers.map(trainerRegion)].filter(Boolean))];
     const activeDistricts = districts;
     el.district.innerHTML = `<option value="">Все регионы</option>${activeDistricts.map((item) => `<option value="${item}">${item}</option>`).join("")}`;
     el.regionChips.innerHTML = activeDistricts.map((district) => `<button data-district="${district}">${district}</button>`).join("");
@@ -222,7 +234,7 @@
     polygonSeries.mapPolygons.template.states.create("hover", {
       fill: am5.color(0xb3162d), strokeOpacity: 0, strokeWidth: 0,
     });
-    const activeDistricts = new Set([...data().trainers.filter((item) => item.level === "Региональный").map(trainerRegion), ...data().managers.map((manager) => manager.region)]);
+    const activeDistricts = new Set([...data().trainers.map(trainerRegion), ...data().managers.map((manager) => manager.region)]);
     polygonSeries.data.setAll(Object.entries(districtByRegion).map(([id, district]) => {
       return {
         id, district,
@@ -259,7 +271,7 @@
       container.events.on("click", () => selectCity(dataItem.dataContext.city));
       return am5.Bullet.new(root, { sprite: container });
     });
-    const regional = data().trainers.filter((item) => item.level === "Региональный" && item.coordinates);
+    const regional = data().trainers.filter((item) => item.coordinates);
     const cityData = regionalCities().map((city) => {
       const trainers = regional.filter((item) => item.city === city);
       const coordinates = trainers[0]?.coordinates;
