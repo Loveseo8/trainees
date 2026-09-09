@@ -108,7 +108,7 @@ window.TRAINERS_DATA = {
       {
         "section": "cosmetology",
         "name": "Малишаускас Ирма Юрьевна",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "ЦФО",
         "region": "ЦФО / МОСКВА И МО",
         "city": "Москва",
@@ -117,21 +117,18 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника AM Clinic Доктора Малаховой, ООО «АМ-КЛИНИК» г. Москва, ул. Родченко, д. 2, помещ. 62н.",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Малишаускас.jpg",
-        "managerIds": [
-          "manager-6",
-          "manager-7"
-        ],
+        "managerIds": [],
         "coordinates": [
           37.6173,
           55.7558
         ],
         "id": "cosmetology-6",
-        "managerId": "manager-6"
+        "managerId": ""
       },
       {
         "section": "cosmetology",
         "name": "Наумчик Галина Александровна",
-        "level": "Федеральный",
+        "level": "Региональный",
         "district": "ЦФО",
         "region": "ЦФО / МОСКВА И МО",
         "city": "Москва",
@@ -140,18 +137,21 @@ window.TRAINERS_DATA = {
         "workplace": "клиника «Nogerov International Clinic» (ООО «ЦЕНТР СОВРЕМЕННОЙ КОСМЕТОЛОГИИ „НОГЕРОВ КЛИНИК“»)",
         "degree": "к.м.н.",
         "photo": "",
-        "managerIds": [],
+        "managerIds": [
+          "manager-6",
+          "manager-7"
+        ],
         "coordinates": [
           37.6173,
           55.7558
         ],
         "id": "cosmetology-7",
-        "managerId": ""
+        "managerId": "manager-6"
       },
       {
         "section": "cosmetology",
         "name": "Первых Светлана Леонидовна",
-        "level": "Федеральный",
+        "level": "Региональный",
         "district": "ЦФО",
         "region": "ЦФО / МОСКВА И МО",
         "city": "Москва",
@@ -160,18 +160,21 @@ window.TRAINERS_DATA = {
         "workplace": "компания «Avare»; проект «MedSherlock»",
         "degree": "",
         "photo": "",
-        "managerIds": [],
+        "managerIds": [
+          "manager-6",
+          "manager-7"
+        ],
         "coordinates": [
           37.6173,
           55.7558
         ],
         "id": "cosmetology-8",
-        "managerId": ""
+        "managerId": "manager-6"
       },
       {
         "section": "cosmetology",
         "name": "Тарасова Ольга Викторовна",
-        "level": "Федеральный",
+        "level": "Региональный",
         "district": "ЦФО",
         "region": "ЦФО / МОСКВА И МО",
         "city": "Москва",
@@ -180,13 +183,16 @@ window.TRAINERS_DATA = {
         "workplace": "клиника «EverEsthetic» (ООО «НОВАЭСТЕТИК»)",
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Тарасова.JPG",
-        "managerIds": [],
+        "managerIds": [
+          "manager-6",
+          "manager-7"
+        ],
         "coordinates": [
           37.6173,
           55.7558
         ],
         "id": "cosmetology-9",
-        "managerId": ""
+        "managerId": "manager-6"
       },
       {
         "section": "cosmetology",
@@ -344,7 +350,7 @@ window.TRAINERS_DATA = {
       {
         "section": "cosmetology",
         "name": "Капотова Наталья Александровна",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "СФО",
         "region": "СФО",
         "city": "Новосибирск",
@@ -353,15 +359,13 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Евромед, ООО \"ЕВРОМЕДКЛИНИКА\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Капотова.jpg",
-        "managerIds": [
-          "manager-35"
-        ],
+        "managerIds": [],
         "coordinates": [
           82.9204,
           55.0302
         ],
         "id": "cosmetology-17",
-        "managerId": "manager-35"
+        "managerId": ""
       },
       {
         "section": "cosmetology",
@@ -432,7 +436,7 @@ window.TRAINERS_DATA = {
       {
         "section": "cosmetology",
         "name": "Захаров Дмитрий Юрьевич",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "УрФО",
         "region": "УРФО",
         "city": "Екатеринбург",
@@ -441,15 +445,13 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Линлайн, ООО \"Клиника \"Линлайн\", г.Екатеринбург, ул. Шейнкмана, д.134 к.а",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Захаров%20Дмитрий%20Юрьевич%20г.%20ЕКБ.jpg",
-        "managerIds": [
-          "manager-45"
-        ],
+        "managerIds": [],
         "coordinates": [
           60.5975,
           56.8389
         ],
         "id": "cosmetology-21",
-        "managerId": "manager-45"
+        "managerId": ""
       },
       {
         "section": "cosmetology",
@@ -542,7 +544,7 @@ window.TRAINERS_DATA = {
       {
         "section": "cosmetology",
         "name": "Маркелова Мария Андреевна",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "ПФО",
         "region": "ПФО",
         "city": "Самара",
@@ -551,20 +553,18 @@ window.TRAINERS_DATA = {
         "workplace": "EVENTUM CLINIC ООО \"ЭВЕНТУМ КЛИНИК\" г. Самара, ул. Советской Армии, д. 212Б, помещ. 5",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Маркелова%20М..jpg",
-        "managerIds": [
-          "manager-53"
-        ],
+        "managerIds": [],
         "coordinates": [
           50.15,
           53.1959
         ],
         "id": "cosmetology-26",
-        "managerId": "manager-53"
+        "managerId": ""
       },
       {
         "section": "cosmetology",
         "name": "Морозова Кира Андреевна",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "ЮФО",
         "region": "ПФО",
         "city": "Ростов-на-Дону",
@@ -573,15 +573,13 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Семья, ООО \"Эстета\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Морозова.webp",
-        "managerIds": [
-          "manager-53"
-        ],
+        "managerIds": [],
         "coordinates": [
           39.7015,
           47.2357
         ],
         "id": "cosmetology-27",
-        "managerId": "manager-53"
+        "managerId": ""
       },
       {
         "section": "cosmetology",
@@ -780,7 +778,7 @@ window.TRAINERS_DATA = {
       {
         "section": "gynecology",
         "name": "Жуманова Екатерина Николаевна",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "ЦФО",
         "region": "ЦФО / МОСКВА И МО",
         "city": "Москва",
@@ -789,21 +787,18 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника МЕДСИ, АО \"ГРУППА КОМПАНИЙ \"МЕДСИ\" г. Москва, пер. Грузинский, д. 3а",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Жуманова.jpg",
-        "managerIds": [
-          "manager-6",
-          "manager-7"
-        ],
+        "managerIds": [],
         "coordinates": [
           37.6173,
           55.7558
         ],
         "id": "gynecology-1",
-        "managerId": "manager-6"
+        "managerId": ""
       },
       {
         "section": "gynecology",
         "name": "Ярусова Анастасия Павловна",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "ЦФО",
         "region": "ЦФО / МОСКВА И МО",
         "city": "Москва",
@@ -812,16 +807,13 @@ window.TRAINERS_DATA = {
         "workplace": "клиника МедСемья, ООО \"Медсемья\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Ярусова.WEBP",
-        "managerIds": [
-          "manager-6",
-          "manager-7"
-        ],
+        "managerIds": [],
         "coordinates": [
           37.6173,
           55.7558
         ],
         "id": "gynecology-2",
-        "managerId": "manager-6"
+        "managerId": ""
       },
       {
         "section": "gynecology",
@@ -848,7 +840,7 @@ window.TRAINERS_DATA = {
       {
         "section": "gynecology",
         "name": "Киденко Наталья Павловна",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "СФО",
         "region": "СФО",
         "city": "Новосибирск",
@@ -857,15 +849,13 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Octo, ООО \"Окто\"",
         "degree": "",
         "photo": "",
-        "managerIds": [
-          "manager-35"
-        ],
+        "managerIds": [],
         "coordinates": [
           82.9204,
           55.0302
         ],
         "id": "gynecology-4",
-        "managerId": "manager-35"
+        "managerId": ""
       },
       {
         "section": "gynecology",
@@ -936,7 +926,7 @@ window.TRAINERS_DATA = {
       {
         "section": "gynecology",
         "name": "Садыкова Гульнара Камильевна",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "ПФО",
         "region": "УРФО",
         "city": "Пермь",
@@ -945,20 +935,18 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника «Медлайн», ООО \"КЛИНИКА СОВРЕМЕННОЙ МЕДИЦИНЫ \"МЕДЛАЙН\"",
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Садыкова.jpg",
-        "managerIds": [
-          "manager-45"
-        ],
+        "managerIds": [],
         "coordinates": [
           56.2294,
           58.0105
         ],
         "id": "gynecology-8",
-        "managerId": "manager-45"
+        "managerId": ""
       },
       {
         "section": "gynecology",
         "name": "Судакова Вероника Валерьевна",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "ПФО",
         "region": "УРФО",
         "city": "Ижевск",
@@ -967,15 +955,13 @@ window.TRAINERS_DATA = {
         "workplace": "МЦ \"Лада Эстет\", ООО МИЦ \"ЛАДА-ЭСТЕТ\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Судакова.webp",
-        "managerIds": [
-          "manager-45"
-        ],
+        "managerIds": [],
         "coordinates": [
           53.2045,
           56.8527
         ],
         "id": "gynecology-9",
-        "managerId": "manager-45"
+        "managerId": ""
       },
       {
         "section": "gynecology",
@@ -1002,7 +988,7 @@ window.TRAINERS_DATA = {
       {
         "section": "gynecology",
         "name": "Цыганкова Ольга Юрьевна",
-        "level": "Региональный",
+        "level": "Федеральный",
         "district": "СФО",
         "region": "ЯНАО, ХМАО",
         "city": "Омск",
@@ -1011,15 +997,13 @@ window.TRAINERS_DATA = {
         "workplace": "клинико-диагностический центр \"Ультрамед\", ООО \"КДЦ \"УЛЬТРАМЕД\", г. Омск, ул. Красных Зорь Угол Ул. Чкалова, д.19/12, Медицинский центр \"Инздрав\" ,ООО «МЦ „ИнтерВзгляд“",
         "degree": "к.м.н.",
         "photo": "",
-        "managerIds": [
-          "manager-71"
-        ],
+        "managerIds": [],
         "coordinates": [
           73.3686,
           54.9885
         ],
         "id": "gynecology-11",
-        "managerId": "manager-71"
+        "managerId": ""
       }
     ],
     "managers": [
