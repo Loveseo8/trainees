@@ -3,6 +3,7 @@
   const catalog = window.TRAINERS_DATA || {};
   let section = "cosmetology";
   let selectedCity = "";
+  let selectedLevel = "";
   let mapRoot = null;
   let mapPointSeries = null;
   let deferredPrompt = null;
@@ -10,11 +11,11 @@
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => [...document.querySelectorAll(selector)];
   const el = {
-    federal: $("#federalGrid"), regional: $("#regionalGrid"), template: $("#trainerCardTemplate"),
+    regional: $("#regionalGrid"),
     search: $("#searchInput"), district: $("#districtFilter"), cityChips: $("#cityChips"), regionChips: $("#regionChips"),
     fallbackCities: $("#fallbackCities"), mapFallback: $("#mapFallback"), map: $("#map"),
     regionTitle: $("#regionTitle"), regionalCount: $("#regionalCount"), manager: $("#managerCard"),
-    clearCity: $("#clearCity"), empty: $("#emptyState"), dialog: $("#trainerDialog"),
+    clearCity: $("#clearCity"), empty: $("#emptyState"), levelFilter: $("#levelFilter"), dialog: $("#trainerDialog"),
     dialogContent: $("#dialogContent"), dialogClose: $("#dialogClose"), install: $("#installButton"),
     installDialog: $("#installDialog"), installDialogClose: $("#installDialogClose"),
     installDialogOk: $("#installDialogOk"), installInstructions: $("#installInstructions"),
@@ -84,10 +85,6 @@
     img.src = sources[sourceIndex];
   }
 
-  function shortSummary(trainer) {
-    return trainer.credentials || trainer.workplace || "Сертифицированный тренер компании ИНГАЛ";
-  }
-
   function openTrainer(trainer) {
     const managers = managersFor(trainer);
     el.dialogContent.innerHTML = `
@@ -106,30 +103,11 @@
     el.dialog.showModal();
   }
 
-  function renderFederal() {
-    el.federal.innerHTML = "";
-    const federal = data().trainers.filter((trainer) => trainer.level === "Федеральный");
-    if (!federal.length) {
-      el.federal.innerHTML = `<div class="empty-state federal-empty">В этом направлении федеральные тренеры пока не указаны.</div>`;
-      return;
-    }
-    federal.forEach((trainer) => {
-      const card = el.template.content.firstElementChild.cloneNode(true);
-      card.querySelector("h3").textContent = trainer.name;
-      card.querySelector(".level-tag").textContent = "Федеральный";
-      card.querySelector(".city-tag").textContent = trainer.city;
-      card.querySelector(".trainer-role").textContent = [trainer.specialty, displayDegree(trainer.degree)].filter(Boolean).join(" · ");
-      card.querySelector(".trainer-summary").textContent = shortSummary(trainer);
-      setPhoto(card.querySelector(".trainer-photo"), trainer);
-      card.querySelector(".card-button").addEventListener("click", () => openTrainer(trainer));
-      el.federal.append(card);
-    });
-  }
-
   function filteredRegional() {
     const query = normalize(el.search.value);
     const district = el.district.value;
     return data().trainers
+      .filter((trainer) => !selectedLevel || trainer.level === selectedLevel)
       .filter((trainer) => !selectedCity || trainer.city === selectedCity)
       .filter((trainer) => !district || trainerRegion(trainer) === district)
       .filter((trainer) => !query || normalize([trainer.name, trainer.city, trainer.specialty, trainer.credentials].join(" ")).includes(query));
@@ -177,7 +155,7 @@
   }
 
   function regionalCities() {
-    return [...new Set(data().trainers.map((item) => item.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, "ru"));
+    return [...new Set(data().trainers.filter((item) => !selectedLevel || item.level === selectedLevel).map((item) => item.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, "ru"));
   }
 
   function selectCity(city) {
@@ -198,7 +176,8 @@
   }
 
   function renderFilters() {
-    const districts = [...new Set([...data().managers.map((manager) => manager.region), ...data().trainers.map(trainerRegion)].filter(Boolean))];
+    const levelTrainers = data().trainers.filter((trainer) => !selectedLevel || trainer.level === selectedLevel);
+    const districts = [...new Set(levelTrainers.map(trainerRegion).filter(Boolean))];
     const activeDistricts = districts;
     el.district.innerHTML = `<option value="">Все регионы</option>${activeDistricts.map((item) => `<option value="${item}">${item}</option>`).join("")}`;
     el.regionChips.innerHTML = activeDistricts.map((district) => `<button data-district="${district}">${district}</button>`).join("");
@@ -234,7 +213,8 @@
     polygonSeries.mapPolygons.template.states.create("hover", {
       fill: am5.color(0xb3162d), strokeOpacity: 0, strokeWidth: 0,
     });
-    const activeDistricts = new Set([...data().trainers.map(trainerRegion), ...data().managers.map((manager) => manager.region)]);
+    const visibleTrainers = data().trainers.filter((trainer) => !selectedLevel || trainer.level === selectedLevel);
+    const activeDistricts = new Set(visibleTrainers.map(trainerRegion));
     polygonSeries.data.setAll(Object.entries(districtByRegion).map(([id, district]) => {
       return {
         id, district,
@@ -271,7 +251,7 @@
       container.events.on("click", () => selectCity(dataItem.dataContext.city));
       return am5.Bullet.new(root, { sprite: container });
     });
-    const regional = data().trainers.filter((item) => item.coordinates);
+    const regional = visibleTrainers.filter((item) => item.coordinates);
     const cityData = regionalCities().map((city) => {
       const trainers = regional.filter((item) => item.city === city);
       const coordinates = trainers[0]?.coordinates;
@@ -282,12 +262,20 @@
   }
 
   function switchSection(next) {
-    section = next; selectedCity = ""; el.search.value = "";
+    section = next; selectedCity = ""; selectedLevel = ""; el.search.value = "";
     $$(".direction-tab, .map-direction-button").forEach((button) => { const active = button.dataset.section === next; button.classList.toggle("is-active", active); button.setAttribute("aria-selected", String(active)); });
-    renderFederal(); renderFilters(); renderRegional(); updateMetrics(); initMap();
+    $$("#levelFilter button").forEach((button) => button.classList.toggle("is-active", button.dataset.level === ""));
+    renderFilters(); renderRegional(); updateMetrics(); initMap();
   }
 
   $$(".direction-tab, .map-direction-button").forEach((button) => button.addEventListener("click", () => switchSection(button.dataset.section)));
+  $$("#levelFilter button").forEach((button) => button.addEventListener("click", () => {
+    selectedLevel = button.dataset.level;
+    selectedCity = "";
+    el.district.value = "";
+    $$("#levelFilter button").forEach((item) => item.classList.toggle("is-active", item === button));
+    renderFilters(); renderRegional(); initMap();
+  }));
   el.search.addEventListener("input", renderRegional);
   el.district.addEventListener("change", () => selectDistrict(el.district.value));
   el.clearCity.addEventListener("click", () => {
