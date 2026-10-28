@@ -1,6 +1,6 @@
-```javascript
 (() => {
   "use strict";
+
   const catalog = window.TRAINERS_DATA || {};
   let section = "cosmetology";
   let selectedCity = "";
@@ -21,47 +21,67 @@
     installDialog: $("#installDialog"), installDialogClose: $("#installDialogClose"),
     installDialogOk: $("#installDialogOk"), installInstructions: $("#installInstructions"),
   };
-
   const clean = (value) => String(value || "").trim();
   const normalize = (value) => clean(value).toLocaleLowerCase("ru-RU").replace(/ё/g, "е");
   const displayDegree = (value) => /^(нет|нет данных|другое|-|—)$/i.test(clean(value)) ? "" : clean(value);
   const initials = (name) => clean(name).split(/\s+/).slice(0, 2).map((part) => part[0] || "").join("");
   const data = () => catalog[section] || { trainers: [], managers: [] };
   const managerIdsFor = (trainer) => trainer.managerIds?.length ? trainer.managerIds : (trainer.managerId ? [trainer.managerId] : []);
-
   const managersFor = (trainer) => {
     const linked = managerIdsFor(trainer).map((id) => data().managers.find((item) => item.id === id)).filter(Boolean);
     return linked.length ? linked : data().managers.filter((manager) => manager.region === trainerRegion(trainer));
   };
-
-  // Территории на карте повторяют внутреннее распределение из справочника компании.
-  // Это не федеральные округа: названия и состав групп сохранены по таблице.
-  const territoryByMapId = {
-    "RU-MOW": "ЦФО / МОСКВА И МО", "RU-MOS": "ЦФО / МОСКВА И МО",
-    "RU-BEL": "ЦФО", "RU-BRY": "ЦФО", "RU-VLA": "ЦФО", "RU-IVA": "ЦФО", "RU-KLU": "ЦФО", "RU-KOS": "ЦФО", "RU-LIP": "ЦФО", "RU-ORL": "ЦФО", "RU-RYA": "ЦФО", "RU-SMO": "ЦФО", "RU-TAM": "ЦФО", "RU-TVE": "ЦФО", "RU-TUL": "ЦФО", "RU-YAR": "ЦФО",
-    "RU-KGD": "СЗФО", "RU-LEN": "СЗФО", "RU-SPE": "СЗФО", "RU-KR": "СЗФО", "RU-KO": "СЗФО", "RU-ARK": "СЗФО", "RU-VLG": "СЗФО", "RU-MUR": "СЗФО", "RU-NEN": "СЗФО", "RU-NGR": "СЗФО", "RU-PSK": "СЗФО",
-    "RU-ALT": "СФО", "RU-AL": "СФО", "RU-IRK": "СФО", "RU-KEM": "СФО", "RU-KYA": "СФО", "RU-NVS": "СФО", "RU-TY": "СФО", "RU-ZAB": "СФО",
-    "RU-PER": "УРФО", "RU-SVE": "УРФО", "RU-CHE": "УРФО", "RU-KIR": "УРФО", "RU-UD": "УРФО",
-    "RU-SAM": "ПФО", "RU-VGG": "ПФО", "RU-AST": "ПФО", "RU-SAR": "ПФО", "RU-PNZ": "ПФО", "RU-ROS": "ПФО", "RU-VOR": "ПФО", "RU-KRS": "ПФО",
-    "RU-NIZ": "ПФО — Нижний Новгород, Казань, Уфа", "RU-TA": "ПФО — Нижний Новгород, Казань, Уфа", "RU-BA": "ПФО — Нижний Новгород, Казань, Уфа",
-    "RU-AMU": "ДВО", "RU-BU": "ДВО", "RU-CHU": "ДВО", "RU-KAM": "ДВО", "RU-MAG": "ДВО", "RU-PRI": "ДВО", "RU-SA": "ДВО", "RU-SAK": "ДВО", "RU-KHA": "ДВО", "RU-YEV": "ДВО",
-    "RU-AD": "ЮФО", "RU-KDA": "ЮФО", "RU-KL": "ЮФО", "RU-SEV": "ЮФО", "RU-CR": "ЮФО", "RU-DA": "ЮФО", "RU-IN": "ЮФО", "RU-KB": "ЮФО", "RU-KC": "ЮФО", "RU-SE": "ЮФО", "RU-CE": "ЮФО", "RU-STA": "ЮФО",
-    "RU-KGN": "ЯНАО, ХМАО", "RU-TYU": "ЯНАО, ХМАО", "RU-KHM": "ЯНАО, ХМАО", "RU-YAN": "ЯНАО, ХМАО", "RU-OMS": "ЯНАО, ХМАО"
+  const federalDistrictRegions = {
+    "ЦФО / МОСКВА И МО": ["RU-BEL","RU-BRY","RU-VLA","RU-IVA","RU-KLU","RU-KOS","RU-LIP","RU-ORL","RU-RYA","RU-SMO","RU-TAM","RU-TVE","RU-TUL","RU-YAR","RU-MOW","RU-MOS"],
+    "СЗФО": ["RU-KR","RU-KO","RU-ARK","RU-VLG","RU-KGD","RU-LEN","RU-MUR","RU-NEN","RU-NGR","RU-PSK","RU-SPE"],
+    "СФО": ["RU-ALT","RU-AL","RU-IRK","RU-KEM","RU-KYA","RU-NVS","RU-TY","RU-ZAB"],
+    "УРФО": ["RU-PER","RU-SVE","RU-CHE","RU-KIR","RU-UD"],
+    "ПФО": ["RU-SAM","RU-VGG","RU-AST","RU-SAR","RU-PNZ","RU-ROS","RU-VOR","RU-KRS"],
+    "ДВО": ["RU-AMU","RU-BU","RU-CHU","RU-KAM","RU-MAG","RU-PRI","RU-SA","RU-SAK","RU-KHA","RU-YEV"],
+    "ЮФО": ["RU-AD","RU-KDA","RU-KL","RU-SEV","RU-CR","RU-DA","RU-IN","RU-KB","RU-KC","RU-SE","RU-CE","RU-STA"],
+    "ЯНАО, ХМАО": ["RU-KGN","RU-TYU","RU-KHM","RU-YAN","RU-OMS"],
+    "Нижний Новгород, Казань, Уфа": ["RU-NIZ","RU-TA","RU-BA"],
   };
-
-  const territoryColors = {
+  const districtByRegion = Object.fromEntries(
+    Object.entries(federalDistrictRegions).flatMap(([district, ids]) => ids.map((id) => [id, district])),
+  );
+  const districtColors = {
     "ЦФО / МОСКВА И МО": { active: 0xf1c5cd, inactive: 0xe4dfdc },
-    "ЦФО": { active: 0xf1c5cd, inactive: 0xe4dfdc },
     "СЗФО": { active: 0xf5d1d7, inactive: 0xeee9e6 },
     "ЮФО": { active: 0xedbbc4, inactive: 0xddd8d5 },
+    "СКФО": { active: 0xf7d9de, inactive: 0xebe6e3 },
     "ПФО": { active: 0xf0c2ca, inactive: 0xe2ddda },
-    "ПФО — Нижний Новгород, Казань, Уфа": { active: 0xf1c5cd, inactive: 0xe7e2df },
     "УРФО": { active: 0xf4ccd3, inactive: 0xe9e4e1 },
     "СФО": { active: 0xeebdc6, inactive: 0xded9d6 },
     "ДВО": { active: 0xf6d4da, inactive: 0xe7e2df },
-    "ЯНАО, ХМАО": { active: 0xedbbc4, inactive: 0xe7e2df }
+    "ЯНАО, ХМАО": { active: 0xedbbc4, inactive: 0xe7e2df },
+    "Нижний Новгород, Казань, Уфа": { active: 0xf1c5cd, inactive: 0xe7e2df },
   };
-
+  // ИСПРАВЛЕНО: приведено в соответствие с Excel-реестром
+  const districtByCity = {
+    "Москва": "ЦФО",
+    "Санкт-Петербург": "СЗФО",
+    "Самара": "ПФО",
+    "Ростов-на-Дону": "ПФО",
+    "Новосибирск": "СФО",
+    "Екатеринбург": "УРФО",
+    "Нижний Новгород": "ПФО",
+    "Воронеж": "ЦФО",
+    "Уфа": "ПФО",
+    "Барнаул": "СФО",
+    "Владивосток": "ДВО",
+    "Красноярск": "СФО",
+    "Киров": "УРФО",
+    "Краснодар": "ЮФО",
+    "Астрахань": "ПФО",
+    "Ижевск": "УРФО",
+    "Кемерово": "СФО",
+    "Омск": "ЯНАО, ХМАО",
+    "Пермь": "УРФО",
+    "Иркутск": "СФО",
+    "Тюмень": "ЯНАО, ХМАО",
+  };
+  const trainerDistrict = (trainer) => districtByCity[trainer.city] || trainer.district;
   const trainerRegion = (trainer) => clean(trainer.region) || "Регион не указан";
 
   function setPhoto(container, trainer, imageSelector = "img") {
@@ -69,14 +89,9 @@
     const fallback = container.querySelector("span");
     if (fallback) fallback.textContent = initials(trainer.name);
     if (!img) return;
-
     const localBase = `assets/trainers/${encodeURIComponent(trainer.name)}`;
     const sources = [...new Set([`${localBase}.jpg`, `${localBase}.jpeg`, `${localBase}.png`, `${localBase}.webp`, trainer.photo].filter(Boolean))];
-    if (!sources.length) {
-      img.classList.add("is-broken");
-      return;
-    }
-
+    if (!sources.length) { img.classList.add("is-broken"); return; }
     let sourceIndex = 0;
     img.alt = trainer.name;
     img.addEventListener("error", () => {
@@ -112,7 +127,7 @@
       .filter((trainer) => !selectedLevel || trainer.level === selectedLevel)
       .filter((trainer) => !selectedCity || trainer.city === selectedCity)
       .filter((trainer) => !district || trainerRegion(trainer) === district)
-      .filter((trainer) => !query || normalize([trainer.name, trainer.city, trainer.region, trainer.specialty, trainer.credentials].join(" ")).includes(query));
+      .filter((trainer) => !query || normalize([trainer.name, trainer.city, trainer.specialty, trainer.credentials].join(" ")).includes(query));
   }
 
   function renderManager(items) {
@@ -120,22 +135,15 @@
       el.manager.hidden = true;
       return;
     }
-
     const managerIds = [...new Set(items.flatMap(managerIdsFor))];
     let managers = managerIds.map((id) => data().managers.find((item) => item.id === id)).filter(Boolean);
-
     if (el.district.value) {
       managers = data().managers.filter((manager) => manager.region === el.district.value);
     } else if (selectedCity) {
       const regions = new Set(items.map(trainerRegion));
       managers = data().managers.filter((manager) => regions.has(manager.region));
     }
-
-    if (!managers.length) {
-      el.manager.hidden = true;
-      return;
-    }
-
+    if (!managers.length) { el.manager.hidden = true; return; }
     el.manager.innerHTML = `<small>${managers.length === 1 ? "Региональный менеджер" : "Региональные менеджеры"}</small>${managers.map((manager) => `<div class="manager-entry"><strong>${manager.name}</strong>${manager.territory ? `<p>${manager.territory}</p>` : ""}</div>`).join("")}`;
     el.manager.hidden = false;
   }
@@ -143,7 +151,6 @@
   function renderRegional() {
     const items = filteredRegional();
     el.regional.innerHTML = "";
-
     items.forEach((trainer) => {
       const row = document.createElement("article");
       row.className = "regional-row";
@@ -151,12 +158,9 @@
       row.innerHTML = `<div class="regional-avatar"><img alt=""><span>${initials(trainer.name)}</span></div><div><h4>${trainer.name}</h4><p><span class="list-level ${trainer.level === "Федеральный" ? "is-federal" : ""}">${trainer.level}</span>${trainer.city} · ${trainer.specialty || "Тренер ИНГАЛ"}</p></div><b>→</b>`;
       setPhoto(row.querySelector(".regional-avatar"), trainer);
       row.addEventListener("click", () => openTrainer(trainer));
-      row.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") openTrainer(trainer);
-      });
+      row.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") openTrainer(trainer); });
       el.regional.append(row);
     });
-
     const selectedDistrict = el.district.value;
     const districtExists = !selectedDistrict || data().trainers.some((trainer) => trainerRegion(trainer) === selectedDistrict) || data().managers.some((manager) => manager.region === selectedDistrict);
     el.regionalCount.textContent = districtExists ? `${items.length} ${items.length === 1 ? "тренер" : items.length < 5 ? "тренера" : "тренеров"}` : "";
@@ -191,14 +195,11 @@
     const levelTrainers = data().trainers.filter((trainer) => !selectedLevel || trainer.level === selectedLevel);
     const districts = [...new Set(levelTrainers.map(trainerRegion).filter(Boolean))];
     const activeDistricts = districts;
-
     el.district.innerHTML = `<option value="">Все регионы</option>${activeDistricts.map((item) => `<option value="${item}">${item}</option>`).join("")}`;
     el.regionChips.innerHTML = activeDistricts.map((district) => `<button data-district="${district}">${district}</button>`).join("");
-
     const chips = regionalCities().map((city) => `<button data-city="${city}">${city}</button>`).join("");
     el.cityChips.innerHTML = chips;
     el.fallbackCities.innerHTML = chips;
-
     $$(".city-chips button").forEach((button) => button.addEventListener("click", () => selectCity(button.dataset.city)));
     $$(".region-chips button").forEach((button) => button.addEventListener("click", () => selectDistrict(button.dataset.district)));
   }
@@ -210,167 +211,97 @@
   }
 
   function initMap() {
-    if (mapRoot) {
-      mapRoot.dispose();
-      mapRoot = null;
-    }
-
+    if (mapRoot) { mapRoot.dispose(); mapRoot = null; }
     if (!window.am5 || !window.am5map || !window.am5geodata_russiaLow) {
-      el.map.hidden = true;
-      el.mapFallback.hidden = false;
-      return;
+      el.map.hidden = true; el.mapFallback.hidden = false; return;
     }
-
-    el.map.hidden = false;
-    el.mapFallback.hidden = true;
+    el.map.hidden = false; el.mapFallback.hidden = true;
     mapRoot = am5.Root.new("map");
     mapRoot._logo?.dispose();
-
     const chart = mapRoot.container.children.push(am5map.MapChart.new(mapRoot, {
-      panX: "translateX",
-      panY: "translateY",
-      wheelY: "zoom",
-      projection: am5map.geoMercator(),
+      panX: "translateX", panY: "translateY", wheelY: "zoom", projection: am5map.geoMercator(),
     }));
-
     const polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(mapRoot, { geoJSON: am5geodata_russiaLow }));
     polygonSeries.mapPolygons.template.setAll({
-      fill: am5.color(0xf1c5cd),
-      stroke: am5.color(0xf1c5cd),
-      strokeWidth: 1.5,
-      interactive: true,
-      cursorOverStyle: "pointer",
-      tooltipText: "{region}",
-      templateField: "polygonSettings",
+      fill: am5.color(0xf1c5cd), stroke: am5.color(0xf1c5cd), strokeWidth: 1.5,
+      interactive: true, cursorOverStyle: "pointer", tooltipText: "{district}", templateField: "polygonSettings",
     });
-
     polygonSeries.mapPolygons.template.states.create("hover", {
-      fill: am5.color(0xb3162d),
-      strokeOpacity: 0,
-      strokeWidth: 0,
+      fill: am5.color(0xb3162d), strokeOpacity: 0, strokeWidth: 0,
     });
-
     const visibleTrainers = data().trainers.filter((trainer) => !selectedLevel || trainer.level === selectedLevel);
-    const activeTerritories = new Set(visibleTrainers.map(trainerRegion));
-
-    polygonSeries.data.setAll(Object.entries(territoryByMapId).map(([id, region]) => ({
-      id,
-      region,
-      polygonSettings: {
-        fill: am5.color(activeTerritories.has(region) ? (territoryColors[region]?.active || 0xf1c5cd) : (territoryColors[region]?.inactive || 0xe4dfdc)),
-        stroke: am5.color(0xffffff),
-        strokeWidth: 1
-      }
-    })));
-
-    const setTerritoryHover = (region, enabled) => {
-      if (!region) return;
+    const activeDistricts = new Set(visibleTrainers.map(trainerRegion));
+    polygonSeries.data.setAll(Object.entries(districtByRegion).map(([id, district]) => {
+      return {
+        id, district,
+        polygonSettings: { fill: am5.color(0xf1c5cd), stroke: am5.color(0xf1c5cd), strokeWidth: 1.5 },
+      };
+    }));
+    const setDistrictHover = (district, enabled) => {
+      if (!district) return;
       polygonSeries.mapPolygons.each((polygon) => {
-        if (polygon.dataItem?.dataContext?.region === region) {
-          if (enabled) polygon.hover();
-          else polygon.unhover();
+        if (polygon.dataItem?.dataContext?.district === district) {
+          if (enabled) polygon.hover(); else polygon.unhover();
         }
       });
     };
-
     polygonSeries.mapPolygons.template.events.on("pointerover", (event) => {
-      const region = event.target.dataItem?.dataContext?.region;
-      if (activeTerritories.has(region)) setTerritoryHover(region, true);
+      const district = event.target.dataItem?.dataContext?.district;
+      if (activeDistricts.has(district)) setDistrictHover(district, true);
     });
-
     polygonSeries.mapPolygons.template.events.on("pointerout", (event) => {
-      const region = event.target.dataItem?.dataContext?.region;
-      if (activeTerritories.has(region)) setTerritoryHover(region, false);
+      const district = event.target.dataItem?.dataContext?.district;
+      if (activeDistricts.has(district)) setDistrictHover(district, false);
     });
-
     polygonSeries.mapPolygons.template.events.on("click", (event) => {
-      const region = event.target.dataItem?.dataContext?.region;
-      if (!region || !activeTerritories.has(region)) return;
-      selectDistrict(region);
+      const district = event.target.dataItem?.dataContext?.district;
+      if (!district || !activeDistricts.has(district)) return;
+      selectDistrict(district);
     });
-
     mapPointSeries = chart.series.push(am5map.MapPointSeries.new(mapRoot, {}));
     mapPointSeries.bullets.push((root, series, dataItem) => {
       const count = dataItem.dataContext.count;
-      const container = am5.Container.new(root, {
-        cursorOverStyle: "pointer",
-        tooltipText: `{city}: ${count}`
-      });
-
-      container.children.push(am5.Circle.new(root, {
-        radius: 15,
-        fill: am5.color(0xffffff),
-        stroke: am5.color(0xb3162d),
-        strokeWidth: 2
-      }));
-      container.children.push(am5.Circle.new(root, {
-        radius: 6,
-        fill: am5.color(0xb3162d)
-      }));
+      const container = am5.Container.new(root, { cursorOverStyle: "pointer", tooltipText: `{city}: ${count}` });
+      container.children.push(am5.Circle.new(root, { radius: 15, fill: am5.color(0xffffff), stroke: am5.color(0xb3162d), strokeWidth: 2 }));
+      container.children.push(am5.Circle.new(root, { radius: 6, fill: am5.color(0xb3162d) }));
       container.events.on("click", () => selectCity(dataItem.dataContext.city));
       return am5.Bullet.new(root, { sprite: container });
     });
-
     const regional = visibleTrainers.filter((item) => item.coordinates);
     const cityData = regionalCities().map((city) => {
       const trainers = regional.filter((item) => item.city === city);
       const coordinates = trainers[0]?.coordinates;
       return coordinates ? { city, count: trainers.length, geometry: { type: "Point", coordinates } } : null;
     }).filter(Boolean);
-
     mapPointSeries.data.setAll(cityData);
     chart.appear(650, 80);
   }
 
   function switchSection(next) {
-    section = next;
-    selectedCity = "";
-    selectedLevel = "";
-    el.search.value = "";
-
-    $$(".direction-tab, .map-direction-button").forEach((button) => {
-      const active = button.dataset.section === next;
-      button.classList.toggle("is-active", active);
-      button.setAttribute("aria-selected", String(active));
-    });
-
+    section = next; selectedCity = ""; selectedLevel = ""; el.search.value = "";
+    $$(".direction-tab, .map-direction-button").forEach((button) => { const active = button.dataset.section === next; button.classList.toggle("is-active", active); button.setAttribute("aria-selected", String(active)); });
     $$("#levelFilter button").forEach((button) => button.classList.toggle("is-active", button.dataset.level === ""));
-    renderFilters();
-    renderRegional();
-    updateMetrics();
-    initMap();
+    renderFilters(); renderRegional(); updateMetrics(); initMap();
   }
 
   $$(".direction-tab, .map-direction-button").forEach((button) => button.addEventListener("click", () => switchSection(button.dataset.section)));
-
   $$("#levelFilter button").forEach((button) => button.addEventListener("click", () => {
     selectedLevel = button.dataset.level;
     selectedCity = "";
     el.district.value = "";
     $$("#levelFilter button").forEach((item) => item.classList.toggle("is-active", item === button));
-    renderFilters();
-    renderRegional();
-    initMap();
+    renderFilters(); renderRegional(); initMap();
   }));
-
   el.search.addEventListener("input", renderRegional);
   el.district.addEventListener("change", () => selectDistrict(el.district.value));
-
   el.clearCity.addEventListener("click", () => {
-    selectedCity = "";
-    el.search.value = "";
-    el.district.value = "";
+    selectedCity = ""; el.search.value = ""; el.district.value = "";
     $$(".city-chips button, .region-chips button").forEach((button) => button.classList.remove("is-active"));
     renderRegional();
   });
-
   el.dialogClose.addEventListener("click", () => el.dialog.close());
-  el.dialog.addEventListener("click", (event) => {
-    if (event.target === el.dialog) el.dialog.close();
-  });
-
+  el.dialog.addEventListener("click", (event) => { if (event.target === el.dialog) el.dialog.close(); });
   const isStandalone = () => window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
-
   const showInstallHelp = () => {
     const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
     el.installInstructions.innerHTML = isIOS
@@ -378,35 +309,18 @@
       : `<p>Откройте меню браузера и выберите <strong>«Установить приложение»</strong> или <strong>«Добавить на главный экран»</strong>.</p>`;
     el.installDialog.showModal();
   };
-
-  window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault();
-    deferredPrompt = event;
-  });
-
-  window.addEventListener("appinstalled", () => {
-    deferredPrompt = null;
-    el.install.hidden = true;
-  });
-
+  window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); deferredPrompt = event; });
+  window.addEventListener("appinstalled", () => { deferredPrompt = null; el.install.hidden = true; });
   el.install.addEventListener("click", async () => {
     if (isStandalone()) return;
-    if (!deferredPrompt) {
-      showInstallHelp();
-      return;
-    }
+    if (!deferredPrompt) { showInstallHelp(); return; }
     deferredPrompt.prompt();
     await deferredPrompt.userChoice;
     deferredPrompt = null;
   });
-
   [el.installDialogClose, el.installDialogOk].forEach((button) => button.addEventListener("click", () => el.installDialog.close()));
-  el.installDialog.addEventListener("click", (event) => {
-    if (event.target === el.installDialog) el.installDialog.close();
-  });
-
+  el.installDialog.addEventListener("click", (event) => { if (event.target === el.installDialog) el.installDialog.close(); });
   if (isStandalone()) el.install.hidden = true;
   if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
-
   switchSection(section);
 })();
