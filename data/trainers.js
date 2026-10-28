@@ -15,10 +15,7 @@ window.TRAINERS_DATA = {
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Бычкова.jpg",
         "managerIds": [],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "coordinates": [37.6173, 55.7558],
         "id": "cosmetology-1",
         "managerId": ""
       },
@@ -35,10 +32,7 @@ window.TRAINERS_DATA = {
         "degree": "д.м.н.",
         "photo": "",
         "managerIds": [],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "coordinates": [37.6173, 55.7558],
         "id": "cosmetology-2",
         "managerId": ""
       },
@@ -55,10 +49,7 @@ window.TRAINERS_DATA = {
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Джанашия1.JPG",
         "managerIds": [],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "coordinates": [37.6173, 55.7558],
         "id": "cosmetology-3",
         "managerId": ""
       },
@@ -75,10 +66,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Еззет%20фото.JPG",
         "managerIds": [],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "coordinates": [37.6173, 55.7558],
         "id": "cosmetology-4",
         "managerId": ""
       },
@@ -94,14 +82,8 @@ window.TRAINERS_DATA = {
         "workplace": "",
         "degree": "к.м.н.",
         "photo": "",
-        "managerIds": [
-          "manager-6",
-          "manager-7"
-        ],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "managerIds": ["manager-6", "manager-7"],
+        "coordinates": [37.6173, 55.7558],
         "id": "cosmetology-5",
         "managerId": "manager-6"
       },
@@ -118,10 +100,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Малишаускас.jpg",
         "managerIds": [],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "coordinates": [37.6173, 55.7558],
         "id": "cosmetology-6",
         "managerId": ""
       },
@@ -137,14 +116,8 @@ window.TRAINERS_DATA = {
         "workplace": "Nogerov Clinic, ООО ЦЕНТР СОВРЕМЕННОЙ КОСМЕТОЛОГИИ \"НОГЕРОВ КЛИНИК\", г Москва,  пр-кт Вернадского, д 44 к 1, помещ IV",
         "degree": "к.м.н.",
         "photo": "",
-        "managerIds": [
-          "manager-6",
-          "manager-7"
-        ],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "managerIds": ["manager-6", "manager-7"],
+        "coordinates": [37.6173, 55.7558],
         "id": "cosmetology-7",
         "managerId": "manager-6"
       },
@@ -160,14 +133,8 @@ window.TRAINERS_DATA = {
         "workplace": "",
         "degree": "",
         "photo": "",
-        "managerIds": [
-          "manager-6",
-          "manager-7"
-        ],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "managerIds": ["manager-6", "manager-7"],
+        "coordinates": [37.6173, 55.7558],
         "id": "cosmetology-8",
         "managerId": "manager-6"
       },
@@ -183,14 +150,8 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника EverEsthetic, ООО «новаэстетик»",
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Тарасова.JPG",
-        "managerIds": [
-          "manager-6",
-          "manager-7"
-        ],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "managerIds": ["manager-6", "manager-7"],
+        "coordinates": [37.6173, 55.7558],
         "id": "cosmetology-9",
         "managerId": "manager-6"
       },
@@ -206,19 +167,12 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника \"АК-Мед\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/i/YAhcxgOyEqGdgA",
-        "managerIds": [
-          "manager-6",
-          "manager-7"
-        ],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "managerIds": ["manager-6", "manager-7"],
+        "coordinates": [37.6173, 55.7558],
         "id": "cosmetology-10",
         "managerId": "manager-6"
       },
-      {
-        "section": "cosmetology",
+              "section": "cosmetology",
         "name": "Давиденко Оксана Ивановна",
         "level": "Региональный",
         "district": "СЗФО",
@@ -229,13 +183,8 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Косметолоджи Премиум, ООО \"КОСМЕТОЛОДЖИ ПРЕМИУМ\"  г. Санкт-Петербург,  пр-кт Каменноостровский, д. 1-3, литера А, помещ. 43Н, офис 1",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Давиденко.JPG",
-        "managerIds": [
-          "manager-25"
-        ],
-        "coordinates": [
-          30.3351,
-          59.9343
-        ],
+        "managerIds": ["manager-25"],
+        "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-11",
         "managerId": "manager-25"
       },
@@ -251,13 +200,8 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Косметолоджи Премиум, ООО \"КОСМЕТОЛОДЖИ ПРЕМИУМ\"  г. Санкт-Петербург,  пр-кт Каменноостровский, д. 1-3, литера А, помещ. 43Н, офис 1",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Евстигнеева.jpg",
-        "managerIds": [
-          "manager-25"
-        ],
-        "coordinates": [
-          30.3351,
-          59.9343
-        ],
+        "managerIds": ["manager-25"],
+        "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-12",
         "managerId": "manager-25"
       },
@@ -274,10 +218,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "",
         "managerIds": [],
-        "coordinates": [
-          30.3351,
-          59.9343
-        ],
+        "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-13",
         "managerId": ""
       },
@@ -293,13 +234,8 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника \"Риадент\", ООО \"РИАДЕНТ\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Петрова%20А.Е%20(1).jpg",
-        "managerIds": [
-          "manager-25"
-        ],
-        "coordinates": [
-          30.3351,
-          59.9343
-        ],
+        "managerIds": ["manager-25"],
+        "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-14",
         "managerId": "manager-25"
       },
@@ -315,13 +251,8 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Медлегенда, ООО \"Медлегенда\" Санкт-Петербург, Комендантский пр-кт, д. 56 стр. 1, помещ. 1н",
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Чаплыгин%20А.В._1.jpeg",
-        "managerIds": [
-          "manager-25"
-        ],
-        "coordinates": [
-          30.3351,
-          59.9343
-        ],
+        "managerIds": ["manager-25"],
+        "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-15",
         "managerId": "manager-25"
       },
@@ -337,13 +268,8 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Галактика ООО \"ГАЛАКТИКА\" г. Санкт-Петербург, Пироговская наб., д. 5/2.​",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Шумская..WEBP",
-        "managerIds": [
-          "manager-25"
-        ],
-        "coordinates": [
-          30.3351,
-          59.9343
-        ],
+        "managerIds": ["manager-25"],
+        "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-16",
         "managerId": "manager-25"
       },
@@ -360,10 +286,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Капотова.jpg",
         "managerIds": [],
-        "coordinates": [
-          82.9204,
-          55.0302
-        ],
+        "coordinates": [82.9204, 55.0302],
         "id": "cosmetology-17",
         "managerId": ""
       },
@@ -379,13 +302,8 @@ window.TRAINERS_DATA = {
         "workplace": "",
         "degree": "",
         "photo": "",
-        "managerIds": [
-          "manager-35"
-        ],
-        "coordinates": [
-          86.0873,
-          55.3547
-        ],
+        "managerIds": ["manager-35"],
+        "coordinates": [86.0873, 55.3547],
         "id": "cosmetology-18",
         "managerId": "manager-35"
       },
@@ -401,13 +319,8 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника \"Нано бьюти\" , ООО \"НАНО БЬЮТИ\"",
         "degree": "",
         "photo": "",
-        "managerIds": [
-          "manager-35"
-        ],
-        "coordinates": [
-          83.7636,
-          53.3474
-        ],
+        "managerIds": ["manager-35"],
+        "coordinates": [83.7636, 53.3474],
         "id": "cosmetology-19",
         "managerId": "manager-35"
       },
@@ -423,13 +336,8 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Современной трихологии, ООО \"КЛИНИКА СОВРЕМЕННОЙ ТРИХОЛОГИИ\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Татарченко.WEBP",
-        "managerIds": [
-          "manager-35"
-        ],
-        "coordinates": [
-          92.8932,
-          56.0153
-        ],
+        "managerIds": ["manager-35"],
+        "coordinates": [92.8932, 56.0153],
         "id": "cosmetology-20",
         "managerId": "manager-35"
       },
@@ -437,8 +345,8 @@ window.TRAINERS_DATA = {
         "section": "cosmetology",
         "name": "Захаров Дмитрий Юрьевич",
         "level": "Федеральный",
-        "district": "УрФО",
-        "region": "УРФО",
+        "district": "УРФО",
+                "region": "УРФО",
         "city": "Екатеринбург",
         "specialty": "Косметолог, Дерматолог",
         "credentials": "Главный врач клиники «Линлайн» (г. Екатеринбург), преподаватель LINLINE Academy и CadaverLab, член экспертного совета по ПМК компании ИНГАЛ. Сертифицированный тренер компании ИНГАЛ.",
@@ -446,10 +354,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Захаров%20Дмитрий%20Юрьевич%20г.%20ЕКБ.jpg",
         "managerIds": [],
-        "coordinates": [
-          60.5975,
-          56.8389
-        ],
+        "coordinates": [60.5975, 56.8389],
         "id": "cosmetology-21",
         "managerId": ""
       },
@@ -457,7 +362,7 @@ window.TRAINERS_DATA = {
         "section": "cosmetology",
         "name": "Захарова Марина Маратовна",
         "level": "Региональный",
-        "district": "УрФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Екатеринбург",
         "specialty": "Косметолог, Дерматолог",
@@ -465,13 +370,8 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Линлайн, ООО \"Клиника \"Линлайн\", г.Екатеринбург, ул. Шейнкмана, д.134 к.а",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Захарова%20(1).jpg",
-        "managerIds": [
-          "manager-45"
-        ],
-        "coordinates": [
-          60.5975,
-          56.8389
-        ],
+        "managerIds": ["manager-45"],
+        "coordinates": [60.5975, 56.8389],
         "id": "cosmetology-22",
         "managerId": "manager-45"
       },
@@ -479,7 +379,7 @@ window.TRAINERS_DATA = {
         "section": "cosmetology",
         "name": "Королева Светлана Игоревна",
         "level": "Региональный",
-        "district": "ПФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Киров",
         "specialty": "Косметолог, Дерматолог",
@@ -487,13 +387,8 @@ window.TRAINERS_DATA = {
         "workplace": "Косметология «Своя клиника», ООО \"СВОЯ КЛИНИКА\"",
         "degree": "",
         "photo": "",
-        "managerIds": [
-          "manager-45"
-        ],
-        "coordinates": [
-          49.6679,
-          58.6035
-        ],
+        "managerIds": ["manager-45"],
+        "coordinates": [49.6679, 58.6035],
         "id": "cosmetology-23",
         "managerId": "manager-45"
       },
@@ -509,13 +404,8 @@ window.TRAINERS_DATA = {
         "workplace": "Caspian cosmetology clinic, ООО «Каспийская Косметологическая Клиника»  г. Астрахань, ул. Бэра, стр. 50.",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Тренер%20Яна%20Вольф.jpg",
-        "managerIds": [
-          "manager-53"
-        ],
-        "coordinates": [
-          48.0336,
-          46.3479
-        ],
+        "managerIds": ["manager-53"],
+        "coordinates": [48.0336, 46.3479],
         "id": "cosmetology-24",
         "managerId": "manager-53"
       },
@@ -531,13 +421,8 @@ window.TRAINERS_DATA = {
         "workplace": "Арт косметология, ООО «МИР-ПЛЮС», г. Ростов-на-Дону, ул. Мечникова, д.50/69",
         "degree": "",
         "photo": "",
-        "managerIds": [
-          "manager-53"
-        ],
-        "coordinates": [
-          39.7015,
-          47.2357
-        ],
+        "managerIds": ["manager-53"],
+        "coordinates": [39.7015, 47.2357],
         "id": "cosmetology-25",
         "managerId": "manager-53"
       },
@@ -554,10 +439,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Маркелова%20М..jpg",
         "managerIds": [],
-        "coordinates": [
-          50.15,
-          53.1959
-        ],
+        "coordinates": [50.15, 53.1959],
         "id": "cosmetology-26",
         "managerId": ""
       },
@@ -574,10 +456,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Морозова.webp",
         "managerIds": [],
-        "coordinates": [
-          39.7015,
-          47.2357
-        ],
+        "coordinates": [39.7015, 47.2357],
         "id": "cosmetology-27",
         "managerId": ""
       },
@@ -585,21 +464,16 @@ window.TRAINERS_DATA = {
         "section": "cosmetology",
         "name": "Терентьева Зульфия Махмутовна",
         "level": "Региональный",
-        "district": "ПФО",
-        "region": "ПФО",
+        "district": "ПФО — Нижний Новгород, Казань, Уфа",
+        "region": "ПФО — Нижний Новгород, Казань, Уфа",
         "city": "Уфа",
         "specialty": "Косметолог, Дерматолог",
         "credentials": "Кандидат медицинских наук, врач-дерматолог, косметолог, онколог, главный врач клиники «Энерджи». Сертифицированный тренер компании ИНГАЛ.",
         "workplace": "Energy clinic ООО\"Сити\" Уфа, Бол. Московская, 15",
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Терентьева%20Зульфия%20Махмутовна.JPG",
-        "managerIds": [
-          "manager-59"
-        ],
-        "coordinates": [
-          55.9587,
-          54.7388
-        ],
+        "managerIds": ["manager-59"],
+        "coordinates": [55.9587, 54.7388],
         "id": "cosmetology-28",
         "managerId": "manager-59"
       },
@@ -607,21 +481,16 @@ window.TRAINERS_DATA = {
         "section": "cosmetology",
         "name": "Максимова Алёна Станиславовна",
         "level": "Региональный",
-        "district": "ПФО",
-        "region": "ПФО",
+        "district": "ПФО — Нижний Новгород, Казань, Уфа",
+        "region": "ПФО — Нижний Новгород, Казань, Уфа",
         "city": "Нижний Новгород",
         "specialty": "Косметолог",
         "credentials": "",
         "workplace": "",
         "degree": "",
         "photo": "",
-        "managerIds": [
-          "manager-59"
-        ],
-        "coordinates": [
-          44.0059,
-          56.3269
-        ],
+        "managerIds": ["manager-59"],
+        "coordinates": [44.0059, 56.3269],
         "id": "cosmetology-29",
         "managerId": "manager-59"
       },
@@ -637,13 +506,8 @@ window.TRAINERS_DATA = {
         "workplace": "\"Ренессанс косметология\",  ООО \"РЕНЕССАНС КОСМЕТОЛОГИЯ. КДЖ\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/i/R8VHdbP2qlmu-A",
-        "managerIds": [
-          "manager-59"
-        ],
-        "coordinates": [
-          50.15,
-          53.1959
-        ],
+        "managerIds": ["manager-59"],
+        "coordinates": [50.15, 53.1959],
         "id": "cosmetology-30",
         "managerId": "manager-59"
       },
@@ -651,21 +515,16 @@ window.TRAINERS_DATA = {
         "section": "cosmetology",
         "name": "Владзимирская Анастасия Михайловна",
         "level": "Региональный",
-        "district": "ДФО",
+        "district": "ДВО",
         "region": "ДВО",
         "city": "Владивосток",
         "specialty": "Косметолог, Дерматолог",
         "credentials": "Врач-дерматолог, косметолог. Сертифицированный тренер компании ИНГАЛ.",
         "workplace": "Клиника \"Шелк\", ООО \" Silk\"",
         "degree": "",
-        "photo": "",
-        "managerIds": [
-          "manager-65"
-        ],
-        "coordinates": [
-          131.8855,
-          43.1155
-        ],
+                "photo": "",
+        "managerIds": ["manager-65"],
+        "coordinates": [131.8855, 43.1155],
         "id": "cosmetology-31",
         "managerId": "manager-65"
       },
@@ -681,13 +540,8 @@ window.TRAINERS_DATA = {
         "workplace": "Косметология \"Николь\", ООО \"ЦЕНТР КРАСОТЫ И ЗДОРОВЬЯ \"НИКОЛЬ\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Шестерня%20Оксана%20Викторовна%204%20(1).jpg",
-        "managerIds": [
-          "manager-68"
-        ],
-        "coordinates": [
-          38.9747,
-          45.0355
-        ],
+        "managerIds": ["manager-68"],
+        "coordinates": [38.9747, 45.0355],
         "id": "cosmetology-32",
         "managerId": "manager-68"
       }
@@ -697,7 +551,7 @@ window.TRAINERS_DATA = {
         "id": "manager-3",
         "name": "Эль Мокдад Светлана Викторовна",
         "territory": "ЦФО",
-        "region": "ЦФО / МОСКВА И МО",
+        "region": "ЦФО",
         "role": "Региональный менеджер"
       },
       {
@@ -745,8 +599,8 @@ window.TRAINERS_DATA = {
       {
         "id": "manager-59",
         "name": "Березина Светлана Михайловна",
-        "territory": "ПФО Нижний Новгород, Казань, Уфа",
-        "region": "ПФО",
+        "territory": "ПФО — Нижний Новгород, Казань, Уфа",
+        "region": "ПФО — Нижний Новгород, Казань, Уфа",
         "role": "Региональный менеджер"
       },
       {
@@ -788,10 +642,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Жуманова.jpg",
         "managerIds": [],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "coordinates": [37.6173, 55.7558],
         "id": "gynecology-1",
         "managerId": ""
       },
@@ -808,10 +659,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Ярусова.WEBP",
         "managerIds": [],
-        "coordinates": [
-          37.6173,
-          55.7558
-        ],
+        "coordinates": [37.6173, 55.7558],
         "id": "gynecology-2",
         "managerId": ""
       },
@@ -827,13 +675,8 @@ window.TRAINERS_DATA = {
         "workplace": "ГБУЗ ИОКБ областной перинатальный центр, 3 частный клинники - Стэль, Байкальский центр многопрофильной медицины, Профиль",
         "degree": "",
         "photo": "",
-        "managerIds": [
-          "manager-35"
-        ],
-        "coordinates": [
-          104.2807,
-          52.2864
-        ],
+        "managerIds": ["manager-35"],
+        "coordinates": [104.2807, 52.2864],
         "id": "gynecology-3",
         "managerId": "manager-35"
       },
@@ -850,10 +693,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "",
         "managerIds": [],
-        "coordinates": [
-          82.9204,
-          55.0302
-        ],
+        "coordinates": [82.9204, 55.0302],
         "id": "gynecology-4",
         "managerId": ""
       },
@@ -869,16 +709,11 @@ window.TRAINERS_DATA = {
         "workplace": "Профессорская клиника",
         "degree": "к.м.н., доцент",
         "photo": "",
-        "managerIds": [
-          "manager-35"
-        ],
-        "coordinates": [
-          92.8932,
-          56.0153
-        ],
+        "managerIds": ["manager-35"],
+        "coordinates": [92.8932, 56.0153],
         "id": "gynecology-5",
         "managerId": "manager-35"
-      },
+              },
       {
         "section": "gynecology",
         "name": "Яковлева Ася Юрьевна",
@@ -891,13 +726,8 @@ window.TRAINERS_DATA = {
         "workplace": "\"Клиника доктора Кулик\", ООО \"Клиника доктора Кулик\"",
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Яковлева.jpg",
-        "managerIds": [
-          "manager-35"
-        ],
-        "coordinates": [
-          83.7636,
-          53.3474
-        ],
+        "managerIds": ["manager-35"],
+        "coordinates": [83.7636, 53.3474],
         "id": "gynecology-6",
         "managerId": "manager-35"
       },
@@ -905,7 +735,7 @@ window.TRAINERS_DATA = {
         "section": "gynecology",
         "name": "Демидова Афродита Евствфьевна",
         "level": "Региональный",
-        "district": "ПФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Пермь",
         "specialty": "Гинеколог",
@@ -913,13 +743,8 @@ window.TRAINERS_DATA = {
         "workplace": "клиника IME, ООО \"ИМЕ\", клиника VOZDUH, ООО \"ВОЗДУХ БЬЮТИ\"",
         "degree": "",
         "photo": "",
-        "managerIds": [
-          "manager-45"
-        ],
-        "coordinates": [
-          56.2294,
-          58.0105
-        ],
+        "managerIds": ["manager-45"],
+        "coordinates": [56.2294, 58.0105],
         "id": "gynecology-7",
         "managerId": "manager-45"
       },
@@ -927,7 +752,7 @@ window.TRAINERS_DATA = {
         "section": "gynecology",
         "name": "Садыкова Гульнара Камильевна",
         "level": "Федеральный",
-        "district": "ПФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Пермь",
         "specialty": "Гинеколог",
@@ -936,10 +761,7 @@ window.TRAINERS_DATA = {
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Садыкова.jpg",
         "managerIds": [],
-        "coordinates": [
-          56.2294,
-          58.0105
-        ],
+        "coordinates": [56.2294, 58.0105],
         "id": "gynecology-8",
         "managerId": ""
       },
@@ -947,7 +769,7 @@ window.TRAINERS_DATA = {
         "section": "gynecology",
         "name": "Судакова Вероника Валерьевна",
         "level": "Федеральный",
-        "district": "ПФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Ижевск",
         "specialty": "Гинеколог",
@@ -956,10 +778,7 @@ window.TRAINERS_DATA = {
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Судакова.webp",
         "managerIds": [],
-        "coordinates": [
-          53.2045,
-          56.8527
-        ],
+        "coordinates": [53.2045, 56.8527],
         "id": "gynecology-9",
         "managerId": ""
       },
@@ -967,7 +786,7 @@ window.TRAINERS_DATA = {
         "section": "gynecology",
         "name": "Баскакова Екатерина Васильевна",
         "level": "Региональный",
-        "district": "УрФО",
+        "district": "ЯНАО, ХМАО",
         "region": "ЯНАО, ХМАО",
         "city": "Тюмень",
         "specialty": "Гинеколог, эндокринолог",
@@ -975,13 +794,8 @@ window.TRAINERS_DATA = {
         "workplace": "ООО Косметологическая клиника",
         "degree": "",
         "photo": "",
-        "managerIds": [
-          "manager-71"
-        ],
-        "coordinates": [
-          65.5343,
-          57.153
-        ],
+        "managerIds": ["manager-71"],
+        "coordinates": [65.5343, 57.153],
         "id": "gynecology-10",
         "managerId": "manager-71"
       },
@@ -989,7 +803,7 @@ window.TRAINERS_DATA = {
         "section": "gynecology",
         "name": "Цыганкова Ольга Юрьевна",
         "level": "Федеральный",
-        "district": "СФО",
+        "district": "ЯНАО, ХМАО",
         "region": "ЯНАО, ХМАО",
         "city": "Омск",
         "specialty": "Гинеколог",
@@ -998,10 +812,7 @@ window.TRAINERS_DATA = {
         "degree": "к.м.н.",
         "photo": "",
         "managerIds": [],
-        "coordinates": [
-          73.3686,
-          54.9885
-        ],
+        "coordinates": [73.3686, 54.9885],
         "id": "gynecology-11",
         "managerId": ""
       }
@@ -1011,7 +822,7 @@ window.TRAINERS_DATA = {
         "id": "manager-3",
         "name": "Эль Мокдад Светлана Викторовна",
         "territory": "ЦФО",
-        "region": "ЦФО / МОСКВА И МО",
+        "region": "ЦФО",
         "role": "Региональный менеджер"
       },
       {
@@ -1059,8 +870,8 @@ window.TRAINERS_DATA = {
       {
         "id": "manager-59",
         "name": "Березина Светлана Михайловна",
-        "territory": "ПФО Нижний Новгород, Казань, Уфа",
-        "region": "ПФО",
+        "territory": "ПФО — Нижний Новгород, Казань, Уфа",
+        "region": "ПФО — Нижний Новгород, Казань, Уфа",
         "role": "Региональный менеджер"
       },
       {
