@@ -230,14 +230,14 @@
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Давиденко.JPG",
         "managerIds": [
-          "manager-25"
+          "manager-26"
         ],
         "coordinates": [
           30.3351,
           59.9343
         ],
         "id": "cosmetology-11",
-        "managerId": "manager-25"
+        "managerId": "manager-26"
       },
       {
         "section": "cosmetology",
@@ -252,14 +252,14 @@
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Евстигнеева.jpg",
         "managerIds": [
-          "manager-25"
+          "manager-26"
         ],
         "coordinates": [
           30.3351,
           59.9343
         ],
         "id": "cosmetology-12",
-        "managerId": "manager-25"
+        "managerId": "manager-26"
       },
       {
         "section": "cosmetology",
@@ -294,14 +294,14 @@
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Петрова%20А.Е%20(1).jpg",
         "managerIds": [
-          "manager-25"
+          "manager-26"
         ],
         "coordinates": [
           30.3351,
           59.9343
         ],
         "id": "cosmetology-14",
-        "managerId": "manager-25"
+        "managerId": "manager-26"
       },
       {
         "section": "cosmetology",
@@ -316,14 +316,14 @@
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Чаплыгин%20А.В._1.jpeg",
         "managerIds": [
-          "manager-25"
+          "manager-26"
         ],
         "coordinates": [
           30.3351,
           59.9343
         ],
         "id": "cosmetology-15",
-        "managerId": "manager-25"
+        "managerId": "manager-26"
       },
       {
         "section": "cosmetology",
@@ -338,14 +338,14 @@
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Шумская..WEBP",
         "managerIds": [
-          "manager-25"
+          "manager-26"
         ],
         "coordinates": [
           30.3351,
           59.9343
         ],
         "id": "cosmetology-16",
-        "managerId": "manager-25"
+        "managerId": "manager-26"
       },
       {
         "section": "cosmetology",
@@ -437,7 +437,7 @@
         "section": "cosmetology",
         "name": "Захаров Дмитрий Юрьевич",
         "level": "Федеральный",
-        "district": "УрФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Екатеринбург",
         "specialty": "Косметолог, Дерматолог",
@@ -457,7 +457,7 @@
         "section": "cosmetology",
         "name": "Захарова Марина Маратовна",
         "level": "Региональный",
-        "district": "УрФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Екатеринбург",
         "specialty": "Косметолог, Дерматолог",
@@ -479,7 +479,7 @@
         "section": "cosmetology",
         "name": "Королева Светлана Игоревна",
         "level": "Региональный",
-        "district": "ПФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Киров",
         "specialty": "Косметолог, Дерматолог",
@@ -501,7 +501,7 @@
         "section": "cosmetology",
         "name": "Вольф Яна Валерьевна",
         "level": "Региональный",
-        "district": "ЮФО",
+        "district": "ПФО",
         "region": "ПФО",
         "city": "Астрахань",
         "specialty": "Косметолог, Дерматолог",
@@ -523,7 +523,7 @@
         "section": "cosmetology",
         "name": "Демиденко Наталья Анатольевна",
         "level": "Региональный",
-        "district": "ЮФО",
+        "district": "ПФО",
         "region": "ПФО",
         "city": "Ростов-на-Дону",
         "specialty": "Косметолог, Дерматолог",
@@ -565,7 +565,7 @@
         "section": "cosmetology",
         "name": "Морозова Кира Андреевна",
         "level": "Федеральный",
-        "district": "ЮФО",
+        "district": "ПФО",
         "region": "ПФО",
         "city": "Ростов-на-Дону",
         "specialty": "Косметолог, Дерматолог",
@@ -573,13 +573,15 @@
         "workplace": "Клиника Семья, ООО \"Эстета\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Морозова.webp",
-        "managerIds": [],
+        "managerIds": [
+          "manager-53"
+        ],
         "coordinates": [
           39.7015,
           47.2357
         ],
         "id": "cosmetology-27",
-        "managerId": ""
+        "managerId": "manager-53"
       },
       {
         "section": "cosmetology",
@@ -651,7 +653,7 @@
         "section": "cosmetology",
         "name": "Владзимирская Анастасия Михайловна",
         "level": "Региональный",
-        "district": "ДФО",
+        "district": "ДВО",
         "region": "ДВО",
         "city": "Владивосток",
         "specialty": "Косметолог, Дерматолог",
@@ -694,13 +696,6 @@
     ],
     "managers": [
       {
-        "id": "manager-3",
-        "name": "Эль Мокдад Светлана Викторовна",
-        "territory": "ЦФО",
-        "region": "ЦФО / МОСКВА И МО",
-        "role": "Региональный менеджер"
-      },
-      {
         "id": "manager-6",
         "name": "Мурадян Алина Вартанесовна",
         "territory": "МОСКВА И МО",
@@ -717,7 +712,14 @@
       {
         "id": "manager-25",
         "name": "Мышинская Анастасия Алексеевна",
-        "territory": "СЗФО Санкт-Петербург, Калининград",
+        "territory": "СЗФО Калининград",
+        "region": "СЗФО",
+        "role": "Региональный менеджер"
+      },
+      {
+        "id": "manager-26",
+        "name": "Виноградова Марина Владимировна",
+        "territory": "СЗФО Петрозаводск, Мурманск, Архангельск, Санкт-Петербург, Сыктывкар",
         "region": "СЗФО",
         "role": "Региональный менеджер"
       },
@@ -905,7 +907,7 @@
         "section": "gynecology",
         "name": "Демидова Афродита Евствфьевна",
         "level": "Региональный",
-        "district": "ПФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Пермь",
         "specialty": "Гинеколог",
@@ -927,7 +929,7 @@
         "section": "gynecology",
         "name": "Садыкова Гульнара Камильевна",
         "level": "Федеральный",
-        "district": "ПФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Пермь",
         "specialty": "Гинеколог",
@@ -935,19 +937,21 @@
         "workplace": "Клиника «Медлайн», ООО \"КЛИНИКА СОВРЕМЕННОЙ МЕДИЦИНЫ \"МЕДЛАЙН\"",
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Садыкова.jpg",
-        "managerIds": [],
+        "managerIds": [
+          "manager-45"
+        ],
         "coordinates": [
           56.2294,
           58.0105
         ],
         "id": "gynecology-8",
-        "managerId": ""
+        "managerId": "manager-45"
       },
       {
         "section": "gynecology",
         "name": "Судакова Вероника Валерьевна",
         "level": "Федеральный",
-        "district": "ПФО",
+        "district": "УРФО",
         "region": "УРФО",
         "city": "Ижевск",
         "specialty": "Гинеколог",
@@ -955,19 +959,21 @@
         "workplace": "МЦ \"Лада Эстет\", ООО МИЦ \"ЛАДА-ЭСТЕТ\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Судакова.webp",
-        "managerIds": [],
+        "managerIds": [
+          "manager-45"
+        ],
         "coordinates": [
           53.2045,
           56.8527
         ],
         "id": "gynecology-9",
-        "managerId": ""
+        "managerId": "manager-45"
       },
       {
         "section": "gynecology",
         "name": "Баскакова Екатерина Васильевна",
         "level": "Региональный",
-        "district": "УрФО",
+        "district": "ЯНАО, ХМАО",
         "region": "ЯНАО, ХМАО",
         "city": "Тюмень",
         "specialty": "Гинеколог, эндокринолог",
@@ -989,7 +995,7 @@
         "section": "gynecology",
         "name": "Цыганкова Ольга Юрьевна",
         "level": "Федеральный",
-        "district": "СФО",
+        "district": "ЯНАО, ХМАО",
         "region": "ЯНАО, ХМАО",
         "city": "Омск",
         "specialty": "Гинеколог",
@@ -997,23 +1003,18 @@
         "workplace": "клинико-диагностический центр \"Ультрамед\", ООО \"КДЦ \"УЛЬТРАМЕД\", г. Омск, ул. Красных Зорь Угол Ул. Чкалова, д.19/12, Медицинский центр \"Инздрав\" ,ООО «МЦ „ИнтерВзгляд“",
         "degree": "к.м.н.",
         "photo": "",
-        "managerIds": [],
+        "managerIds": [
+          "manager-71"
+        ],
         "coordinates": [
           73.3686,
           54.9885
         ],
         "id": "gynecology-11",
-        "managerId": ""
+        "managerId": "manager-71"
       }
     ],
     "managers": [
-      {
-        "id": "manager-3",
-        "name": "Эль Мокдад Светлана Викторовна",
-        "territory": "ЦФО",
-        "region": "ЦФО / МОСКВА И МО",
-        "role": "Региональный менеджер"
-      },
       {
         "id": "manager-6",
         "name": "Мурадян Алина Вартанесовна",
@@ -1031,7 +1032,14 @@
       {
         "id": "manager-25",
         "name": "Мышинская Анастасия Алексеевна",
-        "territory": "СЗФО Санкт-Петербург, Калининград",
+        "territory": "СЗФО Калининград",
+        "region": "СЗФО",
+        "role": "Региональный менеджер"
+      },
+      {
+        "id": "manager-26",
+        "name": "Виноградова Марина Владимировна",
+        "territory": "СЗФО Петрозаводск, Мурманск, Архангельск, Санкт-Петербург, Сыктывкар",
         "region": "СЗФО",
         "role": "Региональный менеджер"
       },
