@@ -184,10 +184,10 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Косметолоджи Премиум, ООО \"КОСМЕТОЛОДЖИ ПРЕМИУМ\"  г. Санкт-Петербург,  пр-кт Каменноостровский, д. 1-3, литера А, помещ. 43Н, офис 1",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Давиденко.JPG",
-        "managerIds": ["manager-25"],
+        "managerIds": ["manager-26"],
         "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-11",
-        "managerId": "manager-25"
+        "managerId": "manager-26"
       },
       {
         "section": "cosmetology",
@@ -201,10 +201,10 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Косметолоджи Премиум, ООО \"КОСМЕТОЛОДЖИ ПРЕМИУМ\"  г. Санкт-Петербург,  пр-кт Каменноостровский, д. 1-3, литера А, помещ. 43Н, офис 1",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Евстигнеева.jpg",
-        "managerIds": ["manager-25"],
+        "managerIds": ["manager-26"],
         "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-12",
-        "managerId": "manager-25"
+        "managerId": "manager-26"
       },
       {
         "section": "cosmetology",
@@ -235,10 +235,10 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника \"Риадент\", ООО \"РИАДЕНТ\"",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Петрова%20А.Е%20(1).jpg",
-        "managerIds": ["manager-25"],
+        "managerIds": ["manager-26"],
         "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-14",
-        "managerId": "manager-25"
+        "managerId": "manager-26"
       },
       {
         "section": "cosmetology",
@@ -252,10 +252,10 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Медлегенда, ООО \"Медлегенда\" Санкт-Петербург, Комендантский пр-кт, д. 56 стр. 1, помещ. 1н",
         "degree": "к.м.н.",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Чаплыгин%20А.В._1.jpeg",
-        "managerIds": ["manager-25"],
+        "managerIds": ["manager-26"],
         "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-15",
-        "managerId": "manager-25"
+        "managerId": "manager-26"
       },
       {
         "section": "cosmetology",
@@ -269,10 +269,10 @@ window.TRAINERS_DATA = {
         "workplace": "Клиника Галактика ООО \"ГАЛАКТИКА\" г. Санкт-Петербург, Пироговская наб., д. 5/2.​",
         "degree": "",
         "photo": "https://disk.yandex.ru/d/HXK7ox_VtvUpVw/Шумская..WEBP",
-        "managerIds": ["manager-25"],
+        "managerIds": ["manager-26"],
         "coordinates": [30.3351, 59.9343],
         "id": "cosmetology-16",
-        "managerId": "manager-25"
+        "managerId": "manager-26"
       },
       {
         "section": "cosmetology",
@@ -565,7 +565,7 @@ window.TRAINERS_DATA = {
       {
         "id": "manager-25",
         "name": "Мышинская Анастасия Алексеевна",
-        "territory": "СЗФО Санкт-Петербург, Калининград",
+        "territory": "СЗФО Калининград",
         "region": "СЗФО",
         "role": "Региональный менеджер"
       },
@@ -820,13 +820,6 @@ window.TRAINERS_DATA = {
     ],
     "managers": [
       {
-        "id": "manager-3",
-        "name": "Эль Мокдад Светлана Викторовна",
-        "territory": "ЦФО",
-        "region": "ЦФО / МОСКВА И МО",
-        "role": "Региональный менеджер"
-      },
-      {
         "id": "manager-6",
         "name": "Мурадян Алина Вартанесовна",
         "territory": "МОСКВА И МО",
@@ -843,7 +836,14 @@ window.TRAINERS_DATA = {
       {
         "id": "manager-25",
         "name": "Мышинская Анастасия Алексеевна",
-        "territory": "СЗФО Санкт-Петербург, Калининград",
+        "territory": "СЗФО Калининград",
+        "region": "СЗФО",
+        "role": "Региональный менеджер"
+      },
+      {
+        "id": "manager-26",
+        "name": "Виноградова Марина Владимировна",
+        "territory": "СЗФО Петрозаводск, Мурманск, Архангельск, Санкт-Петербург, Сыктывкар",
         "region": "СЗФО",
         "role": "Региональный менеджер"
       },
