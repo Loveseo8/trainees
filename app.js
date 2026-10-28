@@ -57,7 +57,6 @@
     "ЯНАО, ХМАО": { active: 0xedbbc4, inactive: 0xe7e2df },
     "Нижний Новгород, Казань, Уфа": { active: 0xf1c5cd, inactive: 0xe7e2df },
   };
-  // ИСПРАВЛЕНО: приведено в соответствие с Excel-реестром
   const districtByCity = {
     "Москва": "ЦФО",
     "Санкт-Петербург": "СЗФО",
