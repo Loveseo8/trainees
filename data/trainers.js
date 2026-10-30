@@ -186,11 +186,11 @@ window.TRAINERS_DATA = {
       },
       {
         "section": "cosmetology", "name": "Киденко Наталья Павловна", "level": "Региональный",
-        "district": "СФО", "region": "СФО", "city": "Кемерово",
+        "district": "СФО", "region": "СФО", "city": "Новосибирск",
         "specialty": "Косметолог",
-        "credentials": "Косметолог, дерматовенеролог, директор клиники «La Femm» Кемерово",
+        "credentials": "Клиника Octo, ООО "Окто"",
         "workplace": "", "degree": "", "photo": "",
-        "managerIds": ["manager-35"], "coordinates": [86.0873, 55.3547], "id": "cosmetology-18", "managerId": "manager-35"
+        "managerIds": ["manager-35"], "coordinates": [55.030204, 82.920430], "id": "cosmetology-18", "managerId": "manager-35"
       },
       {
         "section": "cosmetology", "name": "Комиссарова Елена Анатольевна", "level": "Региональный",
