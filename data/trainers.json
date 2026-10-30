@@ -373,9 +373,9 @@
         "level": "Региональный",
         "district": "СФО",
         "region": "СФО",
-        "city": "Кемерово",
+        "city": "Новосибирск",
         "specialty": "Косметолог",
-        "credentials": "Косметолог, дерматовенеролог, директор клиники «La Femm» Кемерово",
+        "credentials": "Клиника Octo, ООО "Окто"",
         "workplace": "",
         "degree": "",
         "photo": "",
@@ -383,8 +383,8 @@
           "manager-35"
         ],
         "coordinates": [
-          86.0873,
-          55.3547
+          55.030204, 
+          82.920430
         ],
         "id": "cosmetology-18",
         "managerId": "manager-35"
