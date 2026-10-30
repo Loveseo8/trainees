@@ -211,14 +211,6 @@ window.TRAINERS_DATA = {
         "managerIds": ["manager-35"], "coordinates": [92.8932, 56.0153], "id": "cosmetology-20", "managerId": "manager-35"
       },
       {
-        "section": "cosmetology", "name": "Решетняк Александра Владимировна", "level": "Региональный",
-        "district": "СФО", "region": "СФО", "city": "Новосибирск",
-        "specialty": "Косметолог",
-        "credentials": "Готова в основном Новосибирск и Барнаул. Резерв.",
-        "workplace": "", "degree": "", "photo": "",
-        "managerIds": ["manager-35"], "coordinates": [82.9204, 55.0302], "id": "cosmetology-42", "managerId": "manager-35"
-      },
-      {
         "section": "cosmetology", "name": "Захаров Дмитрий Юрьевич", "level": "Федеральный",
         "district": "УРФО", "region": "УРФО", "city": "Екатеринбург",
         "specialty": "Косметолог, Дерматолог",
@@ -252,14 +244,6 @@ window.TRAINERS_DATA = {
         "credentials": "Врач дерматовенеролог, косметолог, сертифицированный тренер компании Ингал, главный врач Nova Clinic",
         "workplace": "Nova Clinic", "degree": "", "photo": "",
         "managerIds": ["manager-45"], "coordinates": [56.2294, 58.0105], "id": "cosmetology-43", "managerId": "manager-45"
-      },
-      {
-        "section": "cosmetology", "name": "Кокорева Лариса Анатольевна", "level": "Региональный",
-        "district": "УРФО", "region": "УРФО", "city": "Пермь",
-        "specialty": "Косметолог, Дерматолог",
-        "credentials": "Только как региональный тренер.",
-        "workplace": "", "degree": "", "photo": "",
-        "managerIds": ["manager-45"], "coordinates": [56.2294, 58.0105], "id": "cosmetology-44", "managerId": "manager-45"
       },
       {
         "section": "cosmetology", "name": "Вольф Яна Валерьевна", "level": "Региональный",
