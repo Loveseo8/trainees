@@ -1,7 +1,7 @@
 window.TRAINERS_DATA = {
   "cosmetology": {
     "label": "Косметология",
-    "trainers": [
+    "trainers": [ 
       {
         "section": "cosmetology", "name": "Бычкова Наталья Юрьевна", "level": "Федеральный",
         "district": "ЦФО", "region": "ЦФО / МОСКВА И МО", "city": "Москва",
