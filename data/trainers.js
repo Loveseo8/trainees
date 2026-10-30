@@ -188,7 +188,7 @@ window.TRAINERS_DATA = {
         "section": "cosmetology", "name": "Киденко Наталья Павловна", "level": "Региональный",
         "district": "СФО", "region": "СФО", "city": "Новосибирск",
         "specialty": "Косметолог",
-        "credentials": "Клиника Octo, ООО \"Окто\"",
+        "credentials": "Клиника Octo, ООО Окто",
         "workplace": "", "degree": "", "photo": "",
         "managerIds": ["manager-35"], "coordinates": [55.030204, 82.920430], "id": "cosmetology-18", "managerId": "manager-35"
       },
